@@ -414,60 +414,7 @@ Authorization: Bearer <your_jwt_token>
 
 ---
 
-## Deployment
 
-### Frontend → Vercel
-
-```bash
-cd frontend
-npm run build
-```
-
-1. Push your repo to GitHub
-2. Import the project at [vercel.com](https://vercel.com)
-3. Set **Root Directory** to `frontend`
-4. Set **Build Command** to `npm run build`
-5. Set **Output Directory** to `dist`
-6. Add environment variable: `VITE_API_URL=https://your-backend.onrender.com`
-
-### Backend → Render
-
-1. Create a new **Web Service** at [render.com](https://render.com)
-2. Connect your GitHub repo
-3. Set **Root Directory** to `backend`
-4. Set **Build Command** to `npm install && npm run db:generate && npm run build`
-5. Set **Start Command** to `npm start`
-6. Add all environment variables from `.env`
-
-### Database → Supabase or Neon
-
-**Supabase (recommended):**
-1. Create a project at [supabase.com](https://supabase.com)
-2. Go to **Settings → Database → Connection String**
-3. Copy the URI and set it as `DATABASE_URL` in your backend environment
-
-**Neon:**
-1. Create a project at [neon.tech](https://neon.tech)
-2. Copy the connection string from the dashboard
-3. Set it as `DATABASE_URL`
-
-After setting `DATABASE_URL` on your hosting platform, run:
-```bash
-npx prisma db push
-```
-
-### Environment Variables for Production
-
-| Variable | Backend | Frontend |
-|---|---|---|
-| `DATABASE_URL` | ✅ Required | — |
-| `JWT_SECRET` | ✅ Required (use a strong random string) | — |
-| `JWT_EXPIRES_IN` | ✅ Required | — |
-| `FRONTEND_URL` | ✅ Required (your Vercel URL) | — |
-| `NODE_ENV` | ✅ Set to `production` | — |
-| `VITE_API_URL` | — | ✅ Your Render backend URL |
-
----
 
 ## Contributing
 
