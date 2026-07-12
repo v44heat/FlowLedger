@@ -128,57 +128,7 @@ M-Pesa is Kenya's dominant mobile money platform, processing millions of transac
 
 ---
 
-## Project Structure
 
-```
-flowledger/
-│
-├── backend/
-│   ├── prisma/
-│   │   └── schema.prisma          # Database schema
-│   ├── src/
-│   │   ├── config/
-│   │   │   └── index.ts           # Environment config
-│   │   ├── middleware/
-│   │   │   ├── auth.ts            # JWT guard
-│   │   │   └── errorHandler.ts    # Global error handling
-│   │   ├── modules/
-│   │   │   ├── auth/              # Register, login, profile
-│   │   │   ├── transactions/      # List, categorize, bulk ops
-│   │   │   ├── import/            # CSV upload and parsing
-│   │   │   ├── analytics/         # Monthly, trends, insights
-│   │   │   ├── budgets/           # CRUD + usage tracking
-│   │   │   └── categorization/
-│   │   │       └── categorization.engine.ts   # 4-layer engine
-│   │   ├── utils/
-│   │   │   └── csvParser.ts       # M-Pesa CSV normalizer
-│   │   └── index.ts               # Express app entry point
-│   ├── .env.example
-│   ├── package.json
-│   └── tsconfig.json
-│
-└── frontend/
-    ├── src/
-    │   ├── api/
-    │   │   └── client.ts          # Axios instance + API methods
-    │   ├── components/
-    │   │   ├── layout/            # Sidebar, Header, Layout
-    │   │   ├── dashboard/         # StatCard, charts, insights
-    │   │   ├── transactions/      # Table, CategoryEditor
-    │   │   ├── import/            # ImportModal
-    │   │   └── ui/                # Modal, Badge, Spinner
-    │   ├── hooks/                 # React Query data hooks
-    │   ├── pages/                 # Dashboard, Transactions, Analytics, Budgets, Auth
-    │   ├── store/
-    │   │   └── useAppStore.ts     # Zustand store
-    │   └── utils/
-    │       ├── formatters.ts      # KES currency, date formatting
-    │       └── categories.ts      # Category colors and icons
-    ├── tailwind.config.cjs
-    ├── postcss.config.cjs
-    ├── vite.config.ts
-    └── package.json
-```
 
 ---
 
